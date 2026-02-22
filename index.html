@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDUShift – Learn Differently</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #1a7f7f;
+      --teal-dark: #155f5f;
+      --teal-light: #e6f5f5;
+      --amber: #d97706;
+      --sand: #f5f0e8;
+    }
+    * { font-family: 'DM Sans', sans-serif; }
+    h1, h2.display { font-family: 'Playfair Display', serif; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Navbar */
+    nav { background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); }
+
+    /* Hero */
+    .hero-bg {
+      background: linear-gradient(135deg, #f0fafa 0%, #e6f5f5 60%, #fef9f0 100%);
+    }
+    .hero-image-placeholder {
+      background: linear-gradient(145deg, #c9e8e8 0%, #d4ece9 50%, #e8d5c0 100%);
+    }
+
+    /* Feature cards */
+    .feature-card {
+      background: var(--sand);
+      border: 1px solid #e8e0d0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(26,127,127,0.12);
+    }
+    .feature-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem;
+    }
+
+    /* About image placeholders */
+    .img-placeholder {
+      background: linear-gradient(145deg, #c9e8e8, #d8e8d4, #e8d5c0);
+    }
+
+    /* Team cards */
+    .team-card img, .team-card .team-photo {
+      object-fit: cover;
+      width: 100%; aspect-ratio: 1/1;
+      border-radius: 12px;
+    }
+    .team-photo {
+      width: 100%; aspect-ratio: 1/1;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #b2d8d8 0%, #d8b4a0 100%);
+    }
+    .team-photo-pink { background: linear-gradient(135deg, #f4a4a0, #e88080); }
+    .team-photo-blue { background: linear-gradient(135deg, #a0b4d8, #8090c8); }
+    .team-photo-warm { background: linear-gradient(135deg, #d8b480, #c89060); }
+
+    /* Contact form */
+    .form-input {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-color: var(--teal); }
+    .form-label { font-size: 0.8rem; font-weight: 600; color: #555; margin-bottom: 4px; display: block; }
+
+    /* Send button */
+    .btn-send {
+      background: var(--amber);
+      color: white;
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+    .btn-send:hover { background: #b45309; }
+
+    /* Map placeholder */
+    .map-placeholder {
+      background: linear-gradient(135deg, #c8d8c0, #a0c0b0, #80b0a0);
+      position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder::after {
+      content: '📍';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+    }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="w-28 h-8 bg-gray-200 rounded-full"></div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#hero" class="hover:text-teal-700 transition-colors">Home</a>
+        <a href="#about" class="hover:text-teal-700 transition-colors">About</a>
+        <a href="#contact" class="hover:text-teal-700 transition-colors">Contact</a>
+        <a href="#" class="hover:text-teal-700 transition-colors">Blog</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-teal-700 transition-colors">Sign in</a>
+        <a href="#" class="bg-teal-700 text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-teal-800 transition-colors">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-bg pt-28 pb-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">Heading</h1>
+        <p class="text-gray-500 text-base leading-relaxed mb-8 max-w-sm">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        </p>
+        <a href="#" class="inline-block bg-teal-700 text-white font-semibold px-7 py-3 rounded-full hover:bg-teal-800 transition-colors shadow-md">
+          Get Started
+        </a>
+      </div>
+      <div class="reveal hero-image-placeholder rounded-2xl h-72 md:h-96 shadow-lg"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
+      <h2 class="text-3xl font-bold mb-2" style="font-family:'Playfair Display',serif">About</h2>
+      <p class="text-teal-700 font-medium mb-6">What is Lorem Ipsum?</p>
+      <p class="text-gray-500 leading-relaxed text-sm">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 reveal" style="font-family:'Playfair Display',serif">What We Do</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="feature-card rounded-2xl p-8 reveal">
+          <div class="feature-icon bg-yellow-100 mb-5">⚡</div>
+          <h3 class="font-bold text-lg mb-1">Future 1</h3>
+          <p class="text-xs text-teal-700 font-semibold mb-3">What is Lorem Ipsum?</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="feature-card rounded-2xl p-8 reveal" style="transition-delay:0.1s">
+          <div class="feature-icon bg-orange-100 mb-5">🎓</div>
+          <h3 class="font-bold text-lg mb-1">Future 2</h3>
+          <p class="text-xs text-teal-700 font-semibold mb-3">What is Lorem Ipsum?</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="feature-card rounded-2xl p-8 reveal" style="transition-delay:0.2s">
+          <div class="feature-icon bg-teal-100 mb-5">🔬</div>
+          <h3 class="font-bold text-lg mb-1">Future 3</h3>
+          <p class="text-xs text-teal-700 font-semibold mb-3">What is Lorem Ipsum?</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT – Image Left -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="img-placeholder rounded-2xl h-72 md:h-80 shadow-md reveal"></div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <h2 class="text-3xl font-bold mb-4" style="font-family:'Playfair Display',serif">About</h2>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT – Image Right -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <h2 class="text-3xl font-bold mb-4" style="font-family:'Playfair Display',serif">About</h2>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+      </div>
+      <div class="img-placeholder rounded-2xl h-72 md:h-80 shadow-md reveal" style="transition-delay:0.15s"></div>
+    </div>
+  </section>
+
+  <!-- MEET OUR TEAM -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 reveal" style="font-family:'Playfair Display',serif">Meet Our Team</h2>
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Row 1 -->
+        <div class="team-card reveal text-center">
+          <div class="team-photo team-photo-blue mb-3"></div>
+          <p class="font-bold text-sm">Guy Hawkins</p>
+          <p class="text-xs text-gray-500 mb-2">Nursing Assistant</p>
+          <div class="flex justify-center gap-2">
+            <span class="w-6 h-6 bg-blue-700 rounded text-white flex items-center justify-center text-xs">in</span>
+            <span class="w-6 h-6 bg-gray-700 rounded text-white flex items-center justify-center text-xs">✉</span>
+          </div>
+        </div>
+        <div class="team-card reveal text-center" style="transition-delay:0.1s">
+          <div class="team-photo team-photo-warm mb-3"></div>
+          <p class="font-bold text-sm">Savannah Nguyen</p>
+          <p class="text-xs text-gray-500 mb-2">Medical Assistant</p>
+          <div class="flex justify-center gap-2">
+            <span class="w-6 h-6 bg-blue-700 rounded text-white flex items-center justify-center text-xs">in</span>
+            <span class="w-6 h-6 bg-gray-700 rounded text-white flex items-center justify-center text-xs">✉</span>
+          </div>
+        </div>
+        <div class="team-card reveal text-center" style="transition-delay:0.2s">
+          <div class="team-photo team-photo-pink mb-3"></div>
+          <p class="font-bold text-sm">Cody Fisher</p>
+          <p class="text-xs text-gray-500 mb-2">Marketing Coordinator</p>
+          <div class="flex justify-center gap-2">
+            <span class="w-6 h-6 bg-blue-700 rounded text-white flex items-center justify-center text-xs">in</span>
+            <span class="w-6 h-6 bg-gray-700 rounded text-white flex items-center justify-center text-xs">✉</span>
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="team-card reveal text-center" style="transition-delay:0.05s">
+          <div class="team-photo" style="background:linear-gradient(135deg,#8090c8,#6070b8)" ></div>
+          <p class="font-bold text-sm mt-3">Guy Hawkins</p>
+          <p class="text-xs text-gray-500 mb-2">Nursing Assistant</p>
+          <div class="flex justify-center gap-2">
+            <span class="w-6 h-6 bg-blue-700 rounded text-white flex items-center justify-center text-xs">in</span>
+            <span class="w-6 h-6 bg-gray-700 rounded text-white flex items-center justify-center text-xs">✉</span>
+          </div>
+        </div>
+        <div class="team-card reveal text-center" style="transition-delay:0.15s">
+          <div class="team-photo" style="background:linear-gradient(135deg,#b09070,#907050)"></div>
+          <p class="font-bold text-sm mt-3">Savannah Nguyen</p>
+          <p class="text-xs text-gray-500 mb-2">Medical Assistant</p>
+          <div class="flex justify-center gap-2">
+            <span class="w-6 h-6 bg-blue-700 rounded text-white flex items-center justify-center text-xs">in</span>
+            <span class="w-6 h-6 bg-gray-700 rounded text-white flex items-center justify-center text-xs">✉</span>
+          </div>
+        </div>
+        <div class="team-card reveal text-center" style="transition-delay:0.25s">
+          <div class="team-photo" style="background:linear-gradient(135deg,#e07060,#c05040)"></div>
+          <p class="font-bold text-sm mt-3">Cody Fisher</p>
+          <p class="text-xs text-gray-500 mb-2">Marketing Coordinator</p>
+          <div class="flex justify-center gap-2">
+            <span class="w-6 h-6 bg-blue-700 rounded text-white flex items-center justify-center text-xs">in</span>
+            <span class="w-6 h-6 bg-gray-700 rounded text-white flex items-center justify-center text-xs">✉</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10 reveal" style="font-family:'Playfair Display',serif">Contact</h2>
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm reveal">
+        <div class="grid md:grid-cols-2 gap-5 mb-5">
+          <div>
+            <label class="form-label">First name</label>
+            <input class="form-input" placeholder="Value" />
+          </div>
+          <div>
+            <label class="form-label">Last name</label>
+            <input class="form-input" placeholder="Value" />
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5 mb-5">
+          <div>
+            <label class="form-label">Email</label>
+            <input class="form-input" placeholder="Value" type="email"/>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="form-label">Country Code</label>
+              <select class="form-input">
+                <option>🇺🇸 +1</option>
+                <option>🇬🇧 +44</option>
+                <option>🇩🇪 +49</option>
+                <option>🇪🇬 +20</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label">Phone</label>
+              <input class="form-input" placeholder="Value" />
+            </div>
+          </div>
+        </div>
+        <div class="mb-5">
+          <label class="form-label">Gerard</label>
+          <div class="flex gap-6 mt-1">
+            <label class="flex items-center gap-2 text-sm cursor-pointer">
+              <input type="radio" name="gerard" class="accent-teal-700"> Male
+            </label>
+            <label class="flex items-center gap-2 text-sm cursor-pointer">
+              <input type="radio" name="gerard" class="accent-teal-700"> Female
+            </label>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" rows="5" placeholder="Type your message here..."></textarea>
+        </div>
+        <button class="btn-send">Send</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-100 py-14">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+      <!-- Left -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Contact Us</h3>
+        <p class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+          <span>✉</span> Email: info@EDUShiftMENA.com
+        </p>
+        <p class="flex items-center gap-2 text-sm text-gray-600 mb-8">
+          <span>📞</span> Phone: 01152053691
+        </p>
+        <h3 class="font-bold text-lg mb-4">Social media</h3>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-700 hover:text-teal-700 text-xl transition-colors">𝕏</a>
+          <a href="#" class="text-gray-700 hover:text-teal-700 text-xl transition-colors">🎵</a>
+          <a href="#" class="text-gray-700 hover:text-teal-700 text-xl transition-colors">in</a>
+          <a href="#" class="text-gray-700 hover:text-teal-700 text-xl transition-colors">📘</a>
+          <a href="#" class="text-gray-700 hover:text-teal-700 text-xl transition-colors">📸</a>
+        </div>
+      </div>
+      <!-- Right – Office Map -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Office</h3>
+        <div class="map-placeholder rounded-xl h-52 w-full shadow-md"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
