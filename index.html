@@ -60,7 +60,7 @@
     .card-hover:hover {
       transform: translateY(-6px);
       box-shadow: 0 18px 40px rgba(0,0,0,.10);
-      border-color: rgba(13,148,136,.25);
+      border-color: rgba(4,112,133,.25);
     }
 
     /* ====== Icon pill ====== */
@@ -68,7 +68,7 @@
       width: 44px; height: 44px; border-radius: 9999px;
       display:flex; align-items:center; justify-content:center;
       background: rgba(20,184,166,.10);
-      box-shadow: inset 0 0 0 1px rgba(20,184,166,.15);
+      box-shadow: inset 0 0 0 1px rgba(4,112,133,.1);
     }
 
     /* ====== Buttons micro-interactions ====== */
@@ -85,6 +85,10 @@
       border: 1px solid rgba(255,255,255,.55);
     }
   </style>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 </head>
 
 <body class="bg-[#e6e3da] font-sans text-gray-700 overflow-x-hidden">
@@ -118,7 +122,7 @@
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center py-10 md:py-16 px-6 relative">
       <div class="animate-fadeUp" style="animation-delay:.05s;">
 
-        <h1 class="text-4xl md:text-6xl font-extrabold text-teal-900 leading-tight mb-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-cyan-700 leading-tight mb-4">
           EDUshift AI
           <span class="block text-gray-900/90 text-2xl md:text-3xl font-bold mt-2">
             Learn faster. Practice smarter.
@@ -164,7 +168,7 @@
   <section id="about" class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center py-14 md:py-20 px-6">
     <div class="reveal">
       <p class="text-sm text-gray-500 mb-2">About EDUshift</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-teal-900 mb-4">Accessible. Practical. Measurable.</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-cyan-700 mb-4">Accessible. Practical. Measurable.</h2>
       <p class="text-base leading-relaxed text-gray-600">
         We believe learning should feel real. EDUshift combines structured content with hands-on practice and
         progress tracking—so learners can actually apply what they learn.
@@ -209,25 +213,25 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="reveal card-hover bg-gray-50 rounded-3xl p-6 border border-gray-100">
           <div class="icon-circle mb-4">
-            <svg class="w-5 h-5 text-teal-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-cyan-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M12 6v6l4 2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke-width="1.8"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Guided Learning Paths</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
+          <h3 class="text-lg font-bold text-cyan-700 mb-2">Guided Learning Paths</h3>
+          <p class="text-sm text-cyan-700 leading-relaxed">
             Step-by-step tracks designed around outcomes—so learners always know what to do next.
           </p>
         </div>
 
         <div class="reveal card-hover bg-gray-50 rounded-3xl p-6 border border-gray-100">
           <div class="icon-circle mb-4">
-            <svg class="w-5 h-5 text-teal-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-cyan-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" stroke-width="1.8" stroke-linecap="round"/>
               <path d="M8 7h8M8 11h8M8 15h6" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Practical Projects</h3>
+          <h3 class="text-lg font-bold text-cyan-700 mb-2">Practical Projects</h3>
           <p class="text-sm text-gray-600 leading-relaxed">
             Tasks that feel like real work—perfect for students, graduates, and professionals.
           </p>
@@ -239,7 +243,7 @@
               <path d="M3 18V6M7 18V10M11 18V4M15 18V12M19 18V8" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Progress Tracking</h3>
+          <h3 class="text-lg font-bold text-cyan-700 mb-2">Progress Tracking</h3>
           <p class="text-sm text-gray-600 leading-relaxed">
             Simple metrics and feedback loops so learners see improvement and stay motivated.
           </p>
@@ -250,7 +254,7 @@
 
   <!-- ================= CTA ================= -->
   <section class="max-w-6xl  mx-auto py-14 md:py-20 px-6">
-    <div class="reveal relative overflow-hidden rounded-3xl bg-teal-900 text-white p-8 md:p-10 shadow-xl">
+    <div class="reveal relative overflow-hidden rounded-3xl bg-cyan-700 text-white p-8 md:p-10 shadow-xl">
       <div class="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
       <div class="absolute -bottom-20 -left-12 w-72 h-72 rounded-full bg-orange-400/20 blur-3xl"></div>
 
@@ -274,48 +278,88 @@
   </section>
 
   <!-- ================= TEAM ================= -->
-  <section id="team" class="max-w-6xl  mx-auto py-14 md:py-20 px-6 text-center">
+  <section id="team" class="bg-white py-14 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
     <div class="reveal">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">Meet Our Team</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-cyan-700">Meet Our Team</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- Card 1 -->
       <div class="reveal glass rounded-3xl p-6 shadow-sm card-hover">
         <img src="Untitled design (13).png" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" alt="Team member"/>
-        <h4 class="font-semibold text-teal-900">Bahgat Ayman</h4>
+        <h4 class="font-semibold text-cyan-700 text-lg font-bold">Bahgat Ayman</h4>
         <p class="text-sm text-gray-600 mb-4">Product Manager</p>
-        <div class="flex justify-center gap-4 text-teal-900 text-sm">
-          <a class="hover:underline" href="#">in</a>
-          <a class="hover:underline" href="#">@</a>
+        <div class="flex justify-center gap-4 text-cyan-700 text-xl">
+          <a class="hover:underline" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="hover:underline" href="#"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
 
+      <!-- Card 2 -->
       <div class="reveal glass rounded-3xl p-6 shadow-sm card-hover">
         <img src="https://randomuser.me/api/portraits/men/33.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" alt="Team member"/>
-        <h4 class="font-semibold text-teal-900">Guy Hawkins</h4>
+        <h4 class="font-semibold text-cyan-700 text-lg font-bold">Guy Hawkins</h4>
         <p class="text-sm text-gray-600 mb-4">Product & Content Lead</p>
-        <div class="flex justify-center gap-4 text-teal-900 text-sm">
-          <a class="hover:underline" href="#">in</a>
-          <a class="hover:underline" href="#">@</a>
+        <div class="flex justify-center gap-4 text-cyan-700 text-xl">
+          <a class="hover:underline" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="hover:underline" href="#"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
 
+      <!-- Card 3 -->
       <div class="reveal glass rounded-3xl p-6 shadow-sm card-hover">
         <img src="https://randomuser.me/api/portraits/men/34.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" alt="Team member"/>
-        <h4 class="font-semibold text-teal-900">Guy Hawkins</h4>
+        <h4 class="font-semibold text-cyan-700 text-lg font-bold">Guy Hawkins</h4>
         <p class="text-sm text-gray-600 mb-4">Partnerships & Growth</p>
-        <div class="flex justify-center gap-4 text-teal-900 text-sm">
-          <a class="hover:underline" href="#">in</a>
-          <a class="hover:underline" href="#">@</a>
+        <div class="flex justify-center gap-4 text-cyan-700 text-xl">
+          <a class="hover:underline" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="hover:underline" href="#"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
+
+      <!-- Card 4 -->
+      <div class="reveal glass rounded-3xl p-6 shadow-sm card-hover">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" alt="Team member"/>
+        <h4 class="font-semibold text-cyan-700 text-lg font-bold">Jane Doe</h4>
+        <p class="text-sm text-gray-600 mb-4">UX Designer</p>
+        <div class="flex justify-center gap-4 text-cyan-700 text-xl">
+          <a class="hover:underline" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="hover:underline" href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="reveal glass rounded-3xl p-6 shadow-sm card-hover">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" alt="Team member"/>
+        <h4 class="font-semibold text-cyan-700 text-lg font-bold">Sarah Smith</h4>
+        <p class="text-sm text-gray-600 mb-4">Frontend Developer</p>
+        <div class="flex justify-center gap-4 text-cyan-700 text-xl">
+          <a class="hover:underline" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="hover:underline" href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="reveal glass rounded-3xl p-6 shadow-sm card-hover">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" alt="Team member"/>
+        <h4 class="font-semibold text-cyan-700 text-lg font-bold">John Doe</h4>
+        <p class="text-sm text-gray-600 mb-4">Backend Developer</p>
+        <div class="flex justify-center gap-4 text-cyan-700 text-xl">
+          <a class="hover:underline" href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a class="hover:underline" href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ================= CONTACT ================= -->
-  <section id="contact" class="max-w-6xl bg-white mx-auto py-14 md:py-20 px-6">
+<section id="contact" class="bg-white py-14 md:py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
     <div class="reveal">
-      <p class="text-sm text-gray-500 text-center mb-2">Let’s connect</p>
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Contact</h2>
     </div>
 
@@ -330,23 +374,23 @@
         <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl w-full btn-pop">
           Send
         </button>
-        <p class="text-xs text-gray-500">We typically reply within 1–2 business days.</p>
       </form>
 
-      <div class="reveal bg-teal-900 text-white p-6 rounded-3xl shadow-sm">
+      <div class="reveal bg-[#047085] text-white p-6 rounded-3xl shadow-sm">
         <h3 class="font-semibold mb-4 text-lg">Contact Information</h3>
         <p class="text-sm mb-2 opacity-90">Email: info@example.com</p>
         <p class="text-sm mb-2 opacity-90">Phone: 01152503691</p>
         <p class="text-sm mb-6 opacity-90">Address: Nasr City, Cairo</p>
-        <div class="w-full h-44 bg-white/10 rounded-2xl flex items-center justify-center text-sm opacity-80">
-          Map placeholder
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.083870378206!2d31.333631124440338!3d30.06313031768504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f9b29fdb9d9%3A0x2f9697c19c38b3a4!2sMindShift%20MENA!5e0!3m2!1sar!2seg!4v1772586971353!5m2!1sar!2seg" class="w-full h-44 bg-white/10 rounded-2xl flex items-center justify-center text-sm opacity-80" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-teal-950 text-white py-12">
+  <footer class="bg-[#047085] text-white py-12">
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 text-sm">
       <div>
         <img src="logo-removebg-preview.png" class="w-28 mb-6" alt="EDUshift logo">
